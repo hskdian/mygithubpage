@@ -1,9 +1,10 @@
 h1 {
-  color: red;
+  color: rgba(0,200,100,0.8);
 }
-li{
-  color: green;
+h4{
+  background: rgb(255,100,80);
 }
-h1 {
-  color: orange;
+
+body{
+  background: url(http://cpsresources.com/wp-content/uploads/2014/12/9436-Matte-Woodgrain-Matte.jpg);
 }
