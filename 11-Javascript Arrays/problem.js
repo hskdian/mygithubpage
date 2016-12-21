@@ -24,7 +24,7 @@ function sumArray(arr){
   return total;
 }
 
-function max(){
+function max(arr){
   var max = arr[0];
   for(var i=1;i<arr.length;i++){
     if (max<arr[i]){
