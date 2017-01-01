@@ -1,5 +1,5 @@
-var colors = [];
 var numerOfSquares = 6;
+var colors = [];
 var pickedColor;
 var squares = document.querySelectorAll(".square");
 var colorDisplay = document.querySelector(".colorDisplay");
@@ -20,32 +20,29 @@ function init(){
 
 function setupModeButtons(){
   for (var i = 0; i < modeButtons.length; i++){
-    modeButtons[i].addEventListener('click', function(){
-      modeButtons[0].classList.remove('selected');
-      modeButtons[1].classList.remove('selected');
-      this.classList.add('selected');
-      this.textContent === "Easy"? numerOfSquares = 3: numerOfSquares = 6;
+    modeButtons[i].addEventListener("click", function(){
+      modeButtons[0].classList.remove("selected");
+      modeButtons[1].classList.remove("selected");
+      this.classList.add("selected");
+      this.textContent === "Easy" ? numerOfSquares = 3: numerOfSquares = 6;
       reset();
     });
   }
 }
 
 function setupSquares(){
-  for (var i = 0; 1< squares.length; i ++){
-    //add initial color to squares
-    squares[i].style.background = colors[i];
+  for(var i = 0; i < squares.length; i++){
     //add click listener to squares
-    squares[i].addEventListener ('click', function(){
+    squares[i].addEventListener ("click", function(){
       //grab color of clicked squares
       var clickedColor = this.style.background;
       //compare color to pickedColor
       if (clickedColor === pickedColor){
         messageDisplay.textContent = "Correct";
+        resetButton.textContent = "Play Again?";
         changeColor(clickedColor);
         h1.style.background = clickedColor;
-        resetButton.textContent = "Play Again";
-      }
-      else{
+      } else{
         this.style.background = "#232323";
         messageDisplay.textContent = "Try Again";
       }
@@ -54,10 +51,10 @@ function setupSquares(){
 }
 
 function reset (){
-  h1.style.background = "steelblue";
-  messageDisplay.textContent = "";
   //generate all new colors
   colors = generateRandomColors(numerOfSquares);
+  h1.style.background = "steelblue";
+  messageDisplay.textContent = "";
   //pick a new random color from array
   pickedColor = pickColor();
   //change colorDisplay to pickedColor
@@ -77,9 +74,9 @@ function reset (){
   }
 }
 
-resetButton.addEventListener('click', function(){
-  reset();
-});
+resetButton.addEventListener("click", function(){
+	reset();
+})
 
 
 
